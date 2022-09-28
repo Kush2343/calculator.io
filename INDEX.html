@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-COMPATIBLE" content="IE=EDAGE">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>calculator</title>
+        <link rel="stylesheet" href="INDEX.css" />
+    </head>
+    <center><h1>CALCULATE YOUR PROBLEM</h1></center>
+    <body>
+        <div class="container">
+            <div class="calculator">
+            <input type="text" placeholder="0" id="output-screen">   
+            <button onclick="cl()">CL</button> 
+            <button onclick="del()">DEL</button> 
+            <button onclick="diplay('%')">%</button> 
+            <button onclick="diplay('/')">/</button> 
+            <button onclick="diplay('7')">7</button> 
+            <button onclick="diplay('8')">8</button> 
+            <button onclick="diplay('9')">9</button> 
+            <button onclick="diplay('*')">*</button> 
+            <button onclick="diplay('4')">4</button> 
+            <button onclick="diplay('5')">5</button> 
+            <button onclick="diplay('6')">6</button> 
+            <button onclick="diplay('-')">-</button> 
+            <button onclick="diplay('1')">1</button> 
+            <button onclick="diplay('2')">2</button> 
+            <button onclick="diplay('3')">3</button> 
+            <button onclick="diplay('+')">+</button> 
+            <button onclick="diplay('.')">.</button> 
+            <button onclick="diplay(0)">0</button> 
+            <button onclick="calculator()" class="equal">=</button> 
+            </div>
+        </div>
+        <script>
+            let outputscreen = document.getElementById("output-screen");
+
+            function diplay(num){
+                outputscreen.value += num;
+            }
+            function calculator(){
+                try{
+                    outputscreen.value = eval(outputscreen.value);
+                }
+                catch(err)
+                {
+                    alert("Enter Proper Value")
+                }
+            }
+            function cl(){
+                outputscreen.value ="";
+            }
+            function del(){
+                outputscreen.value = outputscreen.value.slice(0,-1);
+            }
+        </script>
+    </body>
+</html>
